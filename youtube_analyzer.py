@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv  # Import the dotenv library
 from youtube_api import YouTubeAPI
 from anthropic_api import AnthropicAPI
 from trend_analysis import analyze_trends
@@ -6,6 +7,9 @@ from idea_generation import generate_video_ideas, evaluate_video_idea
 from constants import CATEGORIES
 
 def main():
+    # Load environment variables from .env file
+    load_dotenv()
+
     youtube_api_key = os.getenv("YOUTUBE_API_KEY")
     anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
 
